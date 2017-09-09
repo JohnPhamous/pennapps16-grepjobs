@@ -4,8 +4,7 @@ import requests
 import json
 import os
 
-template_dir = os.path.abspath('../frontend')
-app = Flask(__name__, template_folder=template_dir)
+app = Flask(__name__)
 
 
 @app.route("/test")

@@ -72,25 +72,8 @@ gulp.task('copy', function() {
   gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
     .pipe(gulp.dest('vendor/jquery'))
 
-  gulp.src(['node_modules/popper.js/dist/umd/popper.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
-    .pipe(gulp.dest('vendor/popper'))
-
   gulp.src(['node_modules/jquery.easing/*.js'])
     .pipe(gulp.dest('vendor/jquery-easing'))
-
-  gulp.src(['node_modules/simple-line-icons/*/*'])
-    .pipe(gulp.dest('vendor/simple-line-icons'))
-
-
-  gulp.src([
-      'node_modules/font-awesome/**',
-      '!node_modules/font-awesome/**/*.map',
-      '!node_modules/font-awesome/.npmignore',
-      '!node_modules/font-awesome/*.txt',
-      '!node_modules/font-awesome/*.md',
-      '!node_modules/font-awesome/*.json'
-    ])
-    .pipe(gulp.dest('vendor/font-awesome'))
 })
 
 // Default task

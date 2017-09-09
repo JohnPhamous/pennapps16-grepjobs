@@ -62,8 +62,20 @@ section {
 
 .gif {
   height: 300px;
+  width: 300px;
+  margin-bottom: 20px;
 border-radius: 300px; }
 
+.gif-sm {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 20px;
+  border-radius: 150px;
+  margin-top: 75px;
+}
+#search-load {
+  margin-top: 100px;
+}
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;

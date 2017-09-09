@@ -88,7 +88,8 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
         for i, result in enumerate(results):
             if result:
                 row = {}
-                row['query'] = query
+                row['title_input'] = query
+                row['location_input'] = location
                 row['title'] = get_title_from_result(result)
                 row['company'] = get_company_from_result(result)
                 row['summary'] = get_summary_from_result(result)
@@ -105,7 +106,7 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
 if __name__ == '__main__':
     import time
     t1 = time.time()
-    print "Testing indeed_scraper.py"
+    print ("Testing indeed_scraper.py")
     get_jobs(query="Software Developer", location="33146")
     t2 = time.time()
     print (t2-t1)

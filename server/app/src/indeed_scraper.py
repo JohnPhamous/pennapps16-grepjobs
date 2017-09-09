@@ -108,6 +108,5 @@ if __name__ == '__main__':
     t1 = time.time()
     print "Testing indeed_scraper.py"
     get_jobs(query="Software Developer", location="33146")
-
     t2 = time.time()
     print (t2-t1)

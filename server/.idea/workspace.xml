@@ -77,8 +77,8 @@
       <file leaf-file-name="indeed_scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/indeed_scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="105" column="25" lean-forward="false" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+            <state relative-caret-position="670">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
                 <element signature="e#185#214#0" expanded="true" />
               </folding>
@@ -143,8 +143,8 @@
         <option value="$PROJECT_DIR$/app/src/requirements.txt" />
         <option value="$PROJECT_DIR$/app/src/server.py" />
         <option value="$PROJECT_DIR$/app/src/config.py" />
-        <option value="$PROJECT_DIR$/app/src/indeed_scraper.py" />
         <option value="$PROJECT_DIR$/app/src/database.py" />
+        <option value="$PROJECT_DIR$/app/src/indeed_scraper.py" />
       </list>
     </option>
   </component>
@@ -590,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/indeed_scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="105" column="25" lean-forward="false" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+        <state relative-caret-position="670">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="e#185#214#0" expanded="true" />
           </folding>

@@ -22,7 +22,7 @@ BASE_SELECT = {
 def insert(table_name, objects, base=BASE_INSERT):
     base["args"]["table"] = table_name
     base["args"]["objects"] = objects
-    # print base
+    print json.dumps(base)
     r = requests.post(url=ENDPOINT, data=json.dumps(base), headers=AUTH_HEADER)
     return r.text
 

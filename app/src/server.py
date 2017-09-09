@@ -1,16 +1,19 @@
 from .indeed_scraper import get_jobs
 from src import app
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 import requests
 import json
 
 
 @app.route("/")
-def hello():
-    return json.dumps({"message":"Bye World!"})
+def test():
+    return json.dumps({"message": "Bye World!"})
 
+@app.route("/")
+def test():
+    return render_template()
 
-@app.route("/home_query")
+@app.route("/home_query/")
 def home_query():
     title = str(request.args.get("title", default=""))
     location = str(request.args.get("location", default=""))

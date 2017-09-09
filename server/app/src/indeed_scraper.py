@@ -30,9 +30,9 @@ def get_location_from_result(result):
     possible_zip = int(loc.split()[-1]) if loc.split()[-1].isdigit() else 0
     if possible_zip > 10000 & possible_zip < 100000:
         locs['zip_code'] = str(possible_zip)
-        locs['city_state'] = loc.split()[:-1]
+        locs['city_state'] = " ".join(loc.split()[:-1])
     else:
-        locs['zip_code'] = None
+        locs['zip_code'] = ''
         locs['city_state'] = loc
     return locs
 

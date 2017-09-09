@@ -22,7 +22,19 @@ def get_company_from_result(result):
 
 
 def get_location_from_result(result):
-    return extract_text(result.find('span', {'class': 'location'}))
+    """
+    returns dictionary with keys: "zip_code", "city_state"
+    """
+    loc =  extract_text(result.find('span', {'class' : 'location'}))
+    locs = {}
+    possible_zip = int(loc.split()[-1]) if loc.split()[-1].isdigit() else 0
+    if possible_zip > 10000 & possible_zip < 100000:
+        locs['zip_code'] = possible_zip
+        locs['city_state'] = loc.split()[:-1]
+    else:
+        locs['zip_code'] = None
+        locs['city_state'] = loc
+    return locs
 
 
 def get_summary_from_result(result):
@@ -75,20 +87,26 @@ def get_jobs(query, zip_code, radius="15", number_of_pages=5):
 
         for i, result in enumerate(results):
             if result:
-                # if i==1:
-                #     with open("example-soup-indeed-result.html", "w") as f:
-                #         f.write(str(result))
-                # print result
-                # print "\n"*10
                 row = {}
-                row['query'] = query
-                row['title'] = get_title_from_result(result)
-                row['company'] = get_company_from_result(result)
-                row['summary'] = get_summary_from_result(result)
-                row['city'] = get_location_from_result(result)
+                row['Query'] = query
+                row['Title'] = get_title_from_result(result)
+                row['Company'] = get_company_from_result(result)
+                row['Summary'] = get_summary_from_result(result)
                 row['Salary'] = get_salary_from_result(result)
                 row['Experience'] = get_experience_from_result(result)
-                j += 1
+
+                locs = get_location_from_result(result)
+                row['Zip_Code'] = locs['zip_code']
+                row['City-State'] = locs['city_state']
+
                 rows.append(row)
     return rows
 
+if __name__ == '__main__':
+    import time
+    t1 = time.time()
+
+    get_jobs(query="Software Developer", zip_code="33146")
+
+    t2 = time.time()
+    print (t2-t1)

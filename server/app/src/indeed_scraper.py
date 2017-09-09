@@ -59,8 +59,7 @@ def get_salary_from_result(result):
         snip = salary_table.find('nobr')
         if snip:
             return snip.text.strip()
-
-    return None
+    return ""
 
 
 def get_jobs(query, location, radius="15", number_of_pages=5):

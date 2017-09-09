@@ -38,7 +38,7 @@
 
               <br />
 
-              <div class="text-center animated fadeInDown">
+              <div class="text-center animated fadeInDown" v-if="showButton">
                   <div class="btn btn-outline btn-xl animated pulse infinite" v-on:click="findJob">Find your dream job</div>
               </div>
             </div>
@@ -55,12 +55,12 @@ export default {
   data () {
     return {
       jobTitle: '',
-      titleGif: '',
+      titleGif: './static/assets/img/loading.gif',
       jobLocation: '',
-      locationGif: '',
+      locationGif: './static/assets/img/loading.gif',
       paddingTolerance: 30,
       isSearchShown: true,
-      hypeGif: ''
+      hypeGif: './static/assets/img/loading.gif'
     }
   },
   methods: {
@@ -89,6 +89,15 @@ export default {
       response => {
         console.log('Error loading location gif')
       })
+    }
+  },
+  computed: {
+    showButton: function () {
+      if (this.jobTitle.length >= 2 && this.jobLocation.length >= 2) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }

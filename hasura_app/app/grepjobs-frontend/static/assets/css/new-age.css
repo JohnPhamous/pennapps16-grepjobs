@@ -62,8 +62,13 @@ section {
 
 .gif {
   height: 300px;
+  width: 300px;
+  margin-bottom: 20px;
 border-radius: 300px; }
 
+#search-load {
+  margin-top: 300px;
+}
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;

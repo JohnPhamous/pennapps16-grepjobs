@@ -18,27 +18,27 @@ def extract_text(el):
 
 
 def get_company_from_result(result):
-    return extract_text(result.find('span', {'class' : 'company'}))
+    return extract_text(result.find('span', {'class': 'company'}))
 
 
 def get_location_from_result(result):
-    return extract_text(result.find('span', {'class' : 'location'}))
+    return extract_text(result.find('span', {'class': 'location'}))
 
 
 def get_summary_from_result(result):
-    return extract_text(result.find('span', {'class' : 'summary'}))
+    return extract_text(result.find('span', {'class': 'summary'}))
 
 
 def get_title_from_result(result):
-    return extract_text(result.find('a', {'data-tn-element' : 'jobTitle'}))
+    return extract_text(result.find('a', {'data-tn-element': 'jobTitle'}))
 
 
 def get_experience_from_result(result):
-    return extract_text(result.find('span', {'class' : 'experienceList'}))
+    return extract_text(result.find('span', {'class': 'experienceList'}))
 
 
 def get_job_url_from_result(result):
-    return "https://indeed.com" + result.find('a', {'data-tn-element' : 'jobTitle'})['href']
+    return "https://indeed.com" + result.find('a', {'data-tn-element': 'jobTitle'})['href']
 
 
 def get_salary_from_result(result):

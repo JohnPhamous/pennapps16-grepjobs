@@ -5,13 +5,13 @@ import requests
 import json
 
 
-@app.route("/")
+@app.route("/test")
 def test():
-    return json.dumps({"message": "Bye World!"})
+    return json.dumps({"message": "Sup"})
 
 @app.route("/")
 def test():
-    return render_template()
+    return render_template("index.html")
 
 @app.route("/home_query/")
 def home_query():

@@ -11,6 +11,13 @@ BASE_INSERT = {
     }
 }
 
+BASE_SELECT = {
+    "type": "select",
+    "args": {
+        "table": None,
+        "columns": None
+    }
+}
 
 def insert(table_name, objects, base):
     base["args"]["table"] = table_name
@@ -18,6 +25,7 @@ def insert(table_name, objects, base):
     print base
     r = requests.post(url=ENDPOINT, data=json.dumps(base), headers=AUTH_HEADER)
     return r.text
+
 
 
 print(insert(table_name="jobs_update", objects=[{"salary": "2400",

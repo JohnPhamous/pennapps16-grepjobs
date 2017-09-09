@@ -25,7 +25,7 @@ def get_location_from_result(result):
     """
     returns dictionary with keys: "zip_code", "city_state"
     """
-    loc =  extract_text(result.find('span', {'class' : 'location'}))
+    loc = extract_text(result.find('span', {'class': 'location'}))
     locs = {}
     possible_zip = int(loc.split()[-1]) if loc.split()[-1].isdigit() else 0
     if possible_zip > 10000 & possible_zip < 100000:

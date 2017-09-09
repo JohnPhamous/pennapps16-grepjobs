@@ -27,13 +27,23 @@ def get_location_from_result(result):
     """
     loc = extract_text(result.find('span', {'class': 'location'}))
     locs = {}
+
+    # Case 1: contains parens
+    # AND/OR: Contains zip
+    parens_loc = None
+    parens_split = loc.split("(")
+    if len(parens_split) > 1:
+        parens_loc = "(" + parens_split[1]
+        loc = parens_split[0]
+    print loc
+
     possible_zip = int(loc.split()[-1]) if loc.split()[-1].isdigit() else 0
     if possible_zip > 10000 & possible_zip < 100000:
         locs['zip_code'] = str(possible_zip)
-        locs['city_state'] = " ".join(loc.split()[:-1])
+        locs['city_state'] = " ".join(loc.split()[:-1]) if parens_loc==None else " ".join(loc.split()[:-1]) + " " + parens_loc
     else:
         locs['zip_code'] = ''
-        locs['city_state'] = loc
+        locs['city_state'] = loc if parens_loc==None else " ".join(loc.split()[:-1]) + " " + parens_loc
     return locs
 
 
@@ -106,6 +116,6 @@ if __name__ == '__main__':
     import time
     t1 = time.time()
     print "Testing indeed_scraper.py"
-    get_jobs(query="Software Developer", location="33146")
+    print get_jobs(query="Software Developer", location="33146")
     t2 = time.time()
     print (t2-t1)

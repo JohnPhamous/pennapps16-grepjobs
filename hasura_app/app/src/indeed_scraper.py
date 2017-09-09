@@ -116,12 +116,7 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
 if __name__ == '__main__':
     import time
     t1 = time.time()
-<<<<<<< HEAD
-    print "Testing indeed_scraper.py"
-    print get_jobs(query="Software Developer", location="33146")
-=======
     print ("Testing indeed_scraper.py")
     get_jobs(query="Software Developer", location="33146")
->>>>>>> 6143d31a5d17192a72d245497787282230e159bf
     t2 = time.time()
     print (t2-t1)

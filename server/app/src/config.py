@@ -12,23 +12,16 @@ BASE_INSERT = {
 }
 
 
-def insert(table_name, objects, base):
+def insert(table_name, objects, base=BASE_INSERT):
     base["args"]["table"] = table_name
     base["args"]["objects"] = objects
-    print base
+    # print base
     r = requests.post(url=ENDPOINT, data=json.dumps(base), headers=AUTH_HEADER)
     return r.text
 
 
-print(insert(table_name="jobs_update", objects=[{"salary": "2400",
-                                           "title": "plumbj4der",
-                                           "summary": "shid4kjdt",
-                                           "experience": "4d4dj",
-                                           "city": "miamd4ddi"}], base=BASE_INSERT))
-
-
-
-
-
-
-
+# print(insert(table_name="jobs_update", objects=[{"salary": "2400",
+#                                            "title": "plumbj4der",
+#                                            "summary": "shid4kjdt",
+#                                            "experience": "4d4dj",
+#                                            "city": "miamd4ddi"}], base=BASE_INSERT))

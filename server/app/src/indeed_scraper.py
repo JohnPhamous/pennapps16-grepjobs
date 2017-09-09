@@ -63,12 +63,12 @@ def get_salary_from_result(result):
     return None
 
 
-def get_jobs(query, zip_code, radius="15", number_of_pages=5):
+def get_jobs(query, location, radius="15", number_of_pages=5):
     """
-    Provide job query and zip code (optionally radius and number of pages with
+    Provide job query and location (optionally radius and number of pages with
         approximately 15 jobs per page)
     Return: Json list of dictionaries with each entry as an entry in the array.
-        Elements in job listing: Query, Title, Company
+        Elements in job listing: Query, Title, Company, Summary of job, Salary, Experience
     """
 
     url_template = "https://www.indeed.com/jobs?q={}&l={}&radius={}&start={}"
@@ -81,7 +81,8 @@ def get_jobs(query, zip_code, radius="15", number_of_pages=5):
     # Start begins at 0 and increments in steps of 10
     # E.g. Page 1 is start=0, page 2 is start=10, page 3 --> start=20, etc
     for start in range(0,number_of_pages*10, 10):
-        r = requests.get(url_template.format(query_for_search, zip_code, radius, start))
+        r = requests.get(url_template.format(query_for_search, location, radius, start))
+        print url_template.format(query_for_search, location, radius, start)
         soup = BeautifulSoup(r.content, "html5lib")
         results = soup.findAll('div', { "class" : "result" })
 
@@ -106,7 +107,7 @@ if __name__ == '__main__':
     import time
     t1 = time.time()
 
-    get_jobs(query="Software Developer", zip_code="33146")
+    get_jobs(query="Software Developer", location="33146")
 
     t2 = time.time()
     print (t2-t1)

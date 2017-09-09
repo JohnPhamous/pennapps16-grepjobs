@@ -7,3 +7,10 @@ import json
 @app.route("/")
 def hello():
     return json.dumps({"message":"Hello World!"})
+
+@app.route("/wassup")
+def hello():
+    return HttpResponse(
+            json.dumps({"hello":"buddy"}),
+            content_type = 'application/javascript; charset=utf8'
+    )

@@ -48,16 +48,13 @@ section {
 .search {
   line-height: 300%; }
 
-.actions-container {
-  margin-top: 20px;
-}
 .search-input {
   height: 3rem;
   background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
-  color: #00ccff;
+  color: inherit;
   outline: none;
   min-width: 100px;
   transition: width 0.25s;
@@ -81,6 +78,11 @@ section {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
+}
+
+.actions-container {
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.17);
 }
 #search-load {
   margin-top: 100px;
@@ -168,7 +170,7 @@ section {
   background: url("../img/bg-pattern.png"), #7b4397;
   background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
   background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
-  background: linear-gradient(270deg, #0e0e0e, #001f4e);
+  background: linear-gradient(270deg, #b721ff, #21d4fd);
   background-size: 400% 400%;
   -webkit-animation: grepjobs 4s ease infinite;
   -moz-animation: grepjobs 4s ease infinite;

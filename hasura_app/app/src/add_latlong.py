@@ -16,7 +16,7 @@ dict_of_company_locations = {}
 
 NEW_DATA = []
 
-for entry in ARR[:5]:
+for entry in ARR:
     try:
         company_tag = entry['company'] + " " + entry['city_state']
         print company_tag
@@ -43,3 +43,6 @@ print dict_of_company_locations
 
 with open(data_dir2 + city, 'a') as f:
     f.write(json.dumps(NEW_DATA))
+
+with open(data_dir2 + city + "_dict_of_company_locations", 'w') as f:
+    f.write(json.dumps(str(dict_of_company_locations)))

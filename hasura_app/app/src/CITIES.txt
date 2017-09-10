@@ -3,7 +3,6 @@ CITIES
 Put a dash while you are working on a lat_long.
 Put a checkmark when you have finished a lat_long.
 
-
 "San Francisco, California.txt"
 "San Jose, California.txt"
 ~ "Washington, D.C..txt"

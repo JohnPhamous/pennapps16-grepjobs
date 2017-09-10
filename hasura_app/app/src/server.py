@@ -16,7 +16,7 @@ def view():
 @app.route("/home_query/")
 def home_query():
     title = str(request.args.get("title", default=""))
-    location = str(request.args.get("location", default=""))
+    location = str(request.args.get("location", default="")).lower()
     if title and location:
         query_result = get_jobs(query=title, location=int(location))
 
@@ -28,5 +28,3 @@ def home_query():
 # return it as json to John
 # insert results in the database (if they don't exist)
 # @app.route("/home_query", methods=['GET'])
-
-

@@ -35,7 +35,7 @@ def get_location_from_result(result):
     if len(parens_split) > 1:
         parens_loc = "(" + parens_split[1]
         loc = parens_split[0]
-    print loc
+    print(loc)
 
     possible_zip = int(loc.split()[-1]) if loc.split()[-1].isdigit() else 0
     if possible_zip > 10000 & possible_zip < 100000:

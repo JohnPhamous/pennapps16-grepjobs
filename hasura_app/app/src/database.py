@@ -3,7 +3,7 @@ from src import scraper
 import requests
 import json
 
-AUTH_HEADER = {"Authorization": "Bearer jekxp6zm4xol71zqo1d34dqzmps39jtq", "Content-Type": "application/json"}
+AUTH_HEADER = {"Authorization": "Bearer q8aybusuchqpyym42l09jp2fo1fyim68", "Content-Type": "application/json"}
 ENDPOINT = "https://data.howl77.hasura-app.io/v1/query"
 BASE_INSERT = {
     "type": "insert",
@@ -60,6 +60,6 @@ def exists_in_query_table(location_input, title_input):
     return len(_select(table_name="query_result", objects={"location_input": location_input, "title_input": title_input})) > 0
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # print(find_insert_jobs(title_input="Software", location_input="San Fransisco"))
     # print(exists_in_query_table("developer", "San Fransisco"))

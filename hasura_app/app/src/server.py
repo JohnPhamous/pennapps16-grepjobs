@@ -4,7 +4,7 @@ import json
 from src import database
 
 
-@app.route("test")
+@app.route("/test")
 def test():
     return json.dumps({"message": "Sup"})
 

@@ -7,7 +7,7 @@ Vue.component('job-listing', {
           <p><strong>{{ job.company }}</strong></p>
           <p>San Francisco</p>
           <p>\${{ (Math.floor(102504 + Math.random() * (50000) + 500)).toLocaleString() }}</p>
-          <p><small>{{ job.job_experience }}</small></p>
+          <p><small>{{ job.summary }}</small></p>
         </div>
         <div class="row text-center actions-container">
           <div class="col-md-6 listing-actions">

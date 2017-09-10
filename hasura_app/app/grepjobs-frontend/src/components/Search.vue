@@ -82,12 +82,19 @@ export default {
 
       // offset allows a unique gif to be shown on each search
       let offset = Math.floor(Math.random() * (100 - 0))
-      console.log(offset)
       this.$http.get(`http://api.giphy.com/v1/gifs/search?api_key=c6caa15f718f4a64859883c625d3d5ea&q=excited&limit=1&offset=${offset}`).then(response => {
         this.hypeGif = response['body']['data']['0']['images']['original']['url']
       },
       response => {
         console.log('Error loading location gif')
+      })
+
+      var proxy = 'https://cors.now.sh/'
+      this.$http.get(proxy + 'https://repo.howl77.hasura-app.io/home_query/?location=San%20Fransisco&title=Web%20Developer').then(response => {
+        window.location.href = window.location.href.substring(0, window.location.href.length - 2) + 'map.html'
+      },
+      response => {
+        console.log('Error fetching data')
       })
     }
   },

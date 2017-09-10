@@ -6,7 +6,9 @@ import {csv as requestCsv} from 'd3-request';
 
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoiam9obnBoYW1vdXMiLCJhIjoiY2o3ZGdkejU2MGF1bTJ4cXUybWliMWEzeCJ9.hpK4J3DxeUoMf-JD2whdrw'
 
-const DATA_URL = './heatmap-data.csv';
+// const proxy = 'https://cors.now.sh/'
+// const DATA_URL = proxy + 'https://repo.howl77.hasura-app.io/geo_dump/';
+const DATA_URL = './heatmap-data2.csv'
 
 class Root extends Component {
   constructor(props) {

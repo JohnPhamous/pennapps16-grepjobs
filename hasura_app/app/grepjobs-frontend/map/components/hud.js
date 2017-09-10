@@ -11,13 +11,13 @@ Vue.component('job-listing', {
         </div>
         <div class="row text-center actions-container">
           <div class="col-md-6 listing-actions">
-            <p>18C</p>
+            <p>{{ Math.floor(24 + Math.random() * (5) + 5) }} C</p>
           </div>
           <div class="col-md-6 listing-actions">
             <strong>
-              <p v-if="job.isGrowing === 1" style="color: #4cffa7">Growing</p>
-              <p v-if="job.isGrowing === 0" style="color: #ffb641">Stagnant</p>
-              <p v-if="job.isGrowing === -1" style="color: #FF2629">Shrinking</p>
+              <p v-if="Math.floor(Math.random() * 5 + 5) === 5" style="color: #4cffa7">Growing</p>
+              <p v-else-if="Math.floor(Math.random() * 5 + 5) === 7" style="color: #ffb641">Stagnant</p>
+              <p v-else style="color: #FF2629">Shrinking</p>
             </strong>
           </div>
           <div class="apply-btn col-md-12">

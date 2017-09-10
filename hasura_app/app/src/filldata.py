@@ -7,7 +7,7 @@ import os
 # - Chicago 53320
 #   Dallas - 88596
 
-CITY_NUMBER = len(os.listdir("/Users/David/code/pennapps16-grepjobs/hasura_app/app/src/data"))
+CITY_NUMBER = len(os.listdir("./data"))
 
 
 if __name__ == '__main__':

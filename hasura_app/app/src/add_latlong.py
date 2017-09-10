@@ -5,8 +5,8 @@ import json
 CURRENT = 0
 
 
-data_dir = "/Users/David/code/pennapps16-grepjobs/hasura_app/app/src/data/"
-data_dir2 = "/Users/David/code/pennapps16-grepjobs/hasura_app/app/src/data2/"
+data_dir = "./data/"
+data_dir2 = "./data2/"
 city = os.listdir(data_dir)[CURRENT]
 
 with open(data_dir + city, 'r') as f:
@@ -28,7 +28,7 @@ for entry in ARR:
 
         entry.update(lat_long)
         NEW_DATA.append(entry)
-        
+
     except ValueError:
         print("shit went wrong for: " + company_tag)
     finally:

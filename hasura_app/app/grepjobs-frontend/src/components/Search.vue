@@ -91,7 +91,7 @@ export default {
 
       var proxy = 'https://cors.now.sh/'
       this.$http.get(proxy + 'https://repo.howl77.hasura-app.io/home_query/?location=San%20Fransisco&title=Web%20Developer').then(response => {
-        window.location.href = window.location.href.substring(0, window.location.href.length - 2) + 'map.html'
+        setTimeout(redirectPage, 3000)
       },
       response => {
         console.log('Error fetching data')
@@ -108,6 +108,11 @@ export default {
     }
   }
 }
+
+function redirectPage () {
+  window.location.href = window.location.href.substring(0, window.location.href.length - 2) + 'map.html'
+}
+
 </script>
 
 <style lang="css">

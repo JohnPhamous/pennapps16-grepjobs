@@ -114,16 +114,12 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
                 row = {}
                 row['title_input'] = query
                 row['city_state'] = location
-                row['title'] = get_title_from_result(result)
+                row['job_title'] = get_title_from_result(result)
                 row['company'] = get_company_from_result(result)
                 row['summary'] = get_summary_from_result(result)
                 row['salary'] = get_salary_from_result(result)
-                row['experience'] = get_experience_from_result(result)
-
-                locs = get_location_from_result(result)
-                row['zip_code'] = locs['zip_code']
-                row['lat']
-                row['long']
+                row['url'] = get_job_url_from_result(result)
+                row['job_experience'] = get_experience_from_result(result)
 
                 rows.append(row)
     return rows
@@ -132,6 +128,6 @@ if __name__ == '__main__':
     import time
     t1 = time.time()
     print ("Testing indeed_scraper.py")
-    get_jobs(query="Software Developer", location="33146")
+    print get_jobs(query="Software Developer", location="Miami, FL")
     t2 = time.time()
     print (t2-t1)

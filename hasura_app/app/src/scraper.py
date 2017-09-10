@@ -9,6 +9,25 @@ import json
 from functools import *
 import html5lib
 
+from geocode import google
+
+def get_google_thingy_city_state(location):
+    g = google(location)
+    city = g.city
+    state = g.state
+    return city + ", " + state
+
+
+def get_google_thingy_lat_long(location):
+    """
+    returns a dictionary with keys: 'lat', 'long'
+    """
+    g = google(location)
+    latlng = g.latlng
+    return {'lat' : latlng[0], 'long' : latlng[1]}
+
+def get_google_thingy_everything(location):
+    return google(location)
 
 def extract_text(el):
     if el:
@@ -72,7 +91,7 @@ def get_salary_from_result(result):
     return ""
 
 
-def get_jobs(query, location, radius="15", number_of_pages=5):
+def get_jobs(query, location, radius="25", number_of_pages=5):
     """
     Provide job query and location (optionally radius and number of pages with
         approximately 15 jobs per page)
@@ -99,7 +118,6 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
             if result:
                 row = {}
                 row['title_input'] = query
-<<<<<<< HEAD
                 row['city_state'] = location
                 row['job_title'] = get_title_from_result(result)
                 row['company'] = get_company_from_result(result)
@@ -107,36 +125,14 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
                 row['salary'] = get_salary_from_result(result)
                 row['url'] = get_job_url_from_result(result)
                 row['job_experience'] = get_experience_from_result(result)
-=======
-                row['location_input'] = location
-                row['title'] = get_title_from_result(result)
-                row['company'] = get_company_from_result(result)
-                row['summary'] = get_summary_from_result(result)
-                row['salary'] = get_salary_from_result(result)
-                row['experience'] = get_experience_from_result(result)
-
-                locs = get_location_from_result(result)
-                row['zip_code'] = locs['zip_code']
-                row['city_state'] = locs['city_state']
->>>>>>> 4cec7658df0671f92427a11e9fe007d76318f539
 
                 rows.append(row)
     return rows
 
-<<<<<<< HEAD
 if __name__ == '__main__':
     import time
     t1 = time.time()
-    print ("Testing indeed_scraper.py")
-    print get_jobs(query="Software Developer", location="Miami, FL")
+    print ("Testing scraper.py")
+    get_jobs(query="Software Developer", location="33146")
     t2 = time.time()
     print (t2-t1)
-=======
-# if __name__ == '__main__':
-#     import time
-#     t1 = time.time()
-#     print ("Testing scraper.py")
-#     get_jobs(query="Software Developer", location="33146")
-#     t2 = time.time()
-#     print (t2-t1)
->>>>>>> 4cec7658df0671f92427a11e9fe007d76318f539

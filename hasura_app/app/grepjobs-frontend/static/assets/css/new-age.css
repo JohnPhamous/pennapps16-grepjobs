@@ -64,7 +64,10 @@ section {
   height: 300px;
   width: 300px;
   margin-bottom: 20px;
-border-radius: 300px; }
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  border-radius: 300px; }
 
 .gif-sm {
   height: 150px;
@@ -72,6 +75,9 @@ border-radius: 300px; }
   margin-bottom: 20px;
   border-radius: 150px;
   margin-top: 75px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
 }
 #search-load {
   margin-top: 100px;

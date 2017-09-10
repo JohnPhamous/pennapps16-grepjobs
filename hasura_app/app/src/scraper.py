@@ -9,7 +9,7 @@ import json
 from functools import *
 import html5lib
 
-from geocode import google
+from geocoder import google
 
 def get_google_thingy_city_state(location):
     g = google(location)
@@ -125,7 +125,7 @@ def get_jobs(query, location, radius="25", number_of_pages=5):
                 row['salary'] = get_salary_from_result(result)
                 row['url'] = get_job_url_from_result(result)
                 row['job_experience'] = get_experience_from_result(result)
-
+                # row.update(get_google_thingy_lat_long(row['company'] + " " + location))
                 rows.append(row)
     return rows
 

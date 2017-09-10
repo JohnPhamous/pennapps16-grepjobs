@@ -1,12 +1,13 @@
 import scraper
 import json
+import os
 #22455
 #36384 Business - Kansas
 # - Baltimore 38776
 # - Chicago 53320
 #   Dallas - 88596
 
-CITY_NUMBER = 2
+CITY_NUMBER = len(os.listdir("/Users/David/code/pennapps16-grepjobs/hasura_app/app/src/data"))
 
 
 if __name__ == '__main__':
@@ -17,7 +18,7 @@ if __name__ == '__main__':
     counter = 0
     THE_DATA = []
     for job in jobs_list:
-        for city in city_state_list[CITY_NUMBER-1:CITY_NUMBER]:
+        for city in city_state_list[CITY_NUMBER:CITY_NUMBER+1]:
             jobs = scraper.get_jobs(job,city,25,10)
             for x in jobs:
                 print(str(job) + " - " + str(city) + ": " + str(counter))

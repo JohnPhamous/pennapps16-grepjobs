@@ -103,10 +103,10 @@ def get_jobs(query, location, radius="15", number_of_pages=5):
                 rows.append(row)
     return rows
 
-if __name__ == '__main__':
-    import time
-    t1 = time.time()
-    print ("Testing indeed_scraper.py")
-    get_jobs(query="Software Developer", location="33146")
-    t2 = time.time()
-    print (t2-t1)
+# if __name__ == '__main__':
+#     import time
+#     t1 = time.time()
+#     print ("Testing indeed_scraper.py")
+#     get_jobs(query="Software Developer", location="33146")
+#     t2 = time.time()
+#     print (t2-t1)

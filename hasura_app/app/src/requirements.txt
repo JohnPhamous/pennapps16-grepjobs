@@ -3,3 +3,4 @@ requests
 gunicorn
 bs4
 html5lib
+geocoder

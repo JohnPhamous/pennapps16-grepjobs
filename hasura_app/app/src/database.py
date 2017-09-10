@@ -1,7 +1,7 @@
 # Inserts new job search into database
 
 import config
-import indeed_scraper
+import scraper
 import requests
 import json
 
@@ -45,7 +45,7 @@ def find_insert_jobs(title_input, location_input, radius="25", number_of_pages=5
     # if the current query doesn't exist in the database
     if not exists_in_query_table(title_input, location_input):
         print("Data doesn't exist yet")
-        jobs = indeed_scraper.get_jobs(title_input, location_input, radius, number_of_pages)
+        jobs = scraper.get_jobs(title_input, location_input, radius, number_of_pages)
         input_queries = [{"title_input": title_input, "location_input": location_input}]
         _insert(table_name="jobs_update", objects=jobs)
         _insert(table_name="query_result", objects=input_queries)
@@ -65,5 +65,3 @@ def exists_in_query_table(location_input, title_input):
 if __name__ == '__main__':
     # print(find_insert_jobs(title_input="Software", location_input="San Fransisco"))
     print(exists_in_query_table("developer", "San Fransisco"))
-
-

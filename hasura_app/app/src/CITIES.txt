@@ -1,0 +1,37 @@
+CITIES
+
+Put a dash while you are working on a lat_long.
+Put a checkmark when you have finished a lat_long.
+
+
+"San Francisco, California.txt"
+"San Jose, California.txt"
+~ "Washington, D.C..txt"
+"Boston, Massachusetts.txt"
+"Raleigh, North Carolina.txt"
+"Durham, North Carolina.txt"
+"Chapel Hill, North Carolina.txt"
+"Seattle, Washington.txt"
+ "Austin, Texas.txt"
+"Denver, Colorado.txt"
+"Boulder, Colorado.txt"
+"San Diego, California.txt"
+"Madison, Wisconsin.txt"
+"Minneapolis, Minnesota.txt"
+"St. Paul, Minnesota.txt"
+"Baltimore, Maryland.txt"
+"Oakland, California.txt"
+"East Bay, California.txt"
+"Portland, Oregon.txt"
+"New York, New York.txt"
+"Chicago, Illinois.txt"
+"Atlanta, Georgia.txt"
+"Los Angeles, California.txt"
+"Columbus, Ohio.txt"
+"Orange County, California.txt"
+"Dallas, Texas.txt"
+"Fort Worth, Texas.txt"
+"Kansas City, Missouri.txt"
+"Indianapolis, Indiana.txt"
+"Salt Lake City, Utah.txt"
+"Nashville, Tennessee.txt"

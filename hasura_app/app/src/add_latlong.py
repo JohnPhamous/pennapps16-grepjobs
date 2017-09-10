@@ -37,5 +37,5 @@ for entry in ARR:
 
 print dict_of_company_locations
 
-with open(data_dir + city, 'w') as f:
+with open(data_dir2 + city, 'w') as f:
     f.write(json.dumps(NEW_DATA))

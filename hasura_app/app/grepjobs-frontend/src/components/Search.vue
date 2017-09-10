@@ -39,7 +39,7 @@
               <br />
 
               <div class="text-center animated fadeInDown" v-if="showButton">
-                  <div class="btn btn-outline btn-xl animated pulse infinite" v-on:click="findJob">Find your dream job</div>
+                  <div class="btn btn-outline btn-xl" v-on:click="findJob">Find your dream job</div>
               </div>
             </div>
           </div>

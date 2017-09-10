@@ -62,7 +62,17 @@
     .apply-btn {
       margin-bottom: 20px;
     }
-
+    #overall {
+      bottom: 0;
+      left: 0;
+      height: 100px;
+      background-color: rgba(43, 43, 43, 0.53);
+      color: white;
+      width: 25%;
+      position: absolute;
+      z-index: 2;
+      padding: 10px 10px;
+    }
   </style>
 </head>
 
@@ -70,8 +80,12 @@
   <div id="hud">
     <job-listing></job-listing>
   </div>
+  <!-- <div id="overall">
+    <h2>Total Matches</h2>
+  </div> -->
   <script src='bundle.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
   <script src='./components/hud.js'></script>
 </body>
 

@@ -27,13 +27,14 @@
             </div>
 
             <div id="searchField" v-show="isSearchShown">
+              <h3><img src="http://logodust.com/img/free/logo26.png" style="filter:invert(1);height:50px;"/><strong>Grep Jobs</strong></h3>
               <h1 class="mb-5 search animated fadeInDown">
-                  I am looking for a
+                  I am looking for a in
                   <input id="job-title" class="search-input" :style="{width: this.jobTitle.length * this.paddingTolerance + 'px'}" type="text" v-model='jobTitle' spellcheck="false"/>
                   job
               </h1>
               <h1 class="animated fadeInDown">
-                  in <input id="job-location" class="search-input" type="text" :style="{width: this.jobLocation.length * this.paddingTolerance + 'px'}" v-model='jobLocation' spellcheck="false"/>
+                  near <input id="job-location" class="search-input" type="text" :style="{width: this.jobLocation.length * this.paddingTolerance + 'px'}" v-model='jobLocation' spellcheck="false"/>.
               </h1>
 
               <br />

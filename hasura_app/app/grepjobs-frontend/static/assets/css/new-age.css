@@ -396,3 +396,18 @@ footer {
 .btn-xl {
   font-size: 11px;
   padding: 15px 45px; }
+  #demo-banner {
+    top: 0;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(255, 0, 0, 0.25);
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  #demo-banner p {
+    margin-bottom: 0px;
+  }

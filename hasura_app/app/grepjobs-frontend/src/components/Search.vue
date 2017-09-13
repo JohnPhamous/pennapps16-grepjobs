@@ -27,14 +27,14 @@
             </div>
 
             <div id="searchField" v-show="isSearchShown">
-              <h3><img src="http://logodust.com/img/free/logo26.png" style="filter:invert(1);height:50px;"/><strong>Grep Jobs</strong></h3>
+              <h3><img style="filter:invert(1);height:100px;" src="static/assets/img/logo.png"/><strong>Grep Jobs</strong></h3>
               <h1 class="mb-5 search animated fadeInDown">
-                  I am looking for a in
+                  I am looking for a
                   <input id="job-title" class="search-input" :style="{width: this.jobTitle.length * this.paddingTolerance + 'px'}" type="text" v-model='jobTitle' spellcheck="false"/>
                   job
               </h1>
               <h1 class="animated fadeInDown">
-                  near <input id="job-location" class="search-input" type="text" :style="{width: this.jobLocation.length * this.paddingTolerance + 'px'}" v-model='jobLocation' spellcheck="false"/>.
+                  in <input id="job-location" class="search-input" type="text" :style="{width: this.jobLocation.length * this.paddingTolerance + 'px'}" v-model='jobLocation' spellcheck="false"/>
               </h1>
 
               <br />
@@ -55,9 +55,9 @@ export default {
   name: 'Search',
   data () {
     return {
-      jobTitle: '',
+      jobTitle: 'Web Developer',
       titleGif: './static/assets/img/loading.gif',
-      jobLocation: '',
+      jobLocation: 'San Francisco',
       locationGif: './static/assets/img/loading.gif',
       paddingTolerance: 30,
       isSearchShown: true,
@@ -96,6 +96,7 @@ export default {
       },
       response => {
         console.log('Error fetching data')
+        setTimeout(redirectPage, 2000)
       })
     }
   },
